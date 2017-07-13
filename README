@@ -1,0 +1,57 @@
+README
+====================
+
+This project provides a customizable replacement for the standard directory
+listing that Apache webserver provides.
+
+When looking for other options beyond "Fancy Indexing" from Apache, I found:
+
+1.  Support for CSS in LIGHTTPD via "mod_dirlisting"
+2.  Several ways using JavaScript and CSS
+3.  PHP scripts that seemed to require traversal via the document root
+
+So I set out to write my own, and discovered one familiar little option that
+made the whole exercise trivial:  DirectoryIndex
+
+Typically, the DirectoryIndex variable looks something like this:
+DirectoryIndex          index.html index.shtml index.htm
+
+However, it can also look like this:
+DirectoryIndex          index.html index.shtml index.htm /cgi-bin/index.cgi
+
+Which means, all you have to do is write a CGI script, put it into the
+/cgi-bin directory, and any directory listing that doesn't have a appropriate
+file will get the local /cgi-bin/index.cgi script INSTEAD OF the Apache
+Directory Index.
+
+In making the script, a custom header and footer were also created.  The
+header and footer are both sourced and printed by the script.
+
+-
+
+What about photos?
+
+The next goal was, for directories containing a list of photos, to display a
+thumbnail of the actual photo next to the link to the file.  To accomplish
+this, 1) the "convert" program from ImageMagick was used to create the
+thumbnail, and 2) the script "createthumbs.pl" was written to recursively
+create a thumbnail for each photo in a directory tree.
+
+Integration of the thumbnails into the directory listing was done by having
+/cgi-bin/index.cgi check if the file to be listed has an associated
+thumbnail, and if so, display it alongside the link to the actual image.
+
+-
+
+This project is grateful to the following:
+
+Justin Hagstrom: for his icons available at
+                 http://autoindex.sourceforge.net/
+
+Dale Bewley:     for his ImageMagick/convert Perl wrapper at
+                 http://bewley.net/perl/thumbnail.html
+
+-
+
+For installation instructions, please see the INSTALL file.
+
