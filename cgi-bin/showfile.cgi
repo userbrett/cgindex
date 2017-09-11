@@ -1,12 +1,18 @@
-#!/usr/bin/env perl
+#!/usr/bin/perl -w
 #
-# This script, index2file.cgi, is called by /cgi-bin/index.cgi.
-# When called, it prints the contents of the argument, a file,
-# to the browser.  This file should be in the /cgi-bin directory.
+# showfile.cgi
+#
+# This file is part of CGIndex.
+# https://github.com/userbrett/cgindex
+#
+# It is called by index.cgi.
+# It prints the "text" files and lets the browser handle (display,
+# download, etc.) the other files.
+#
+# ###########################################################################
 
 
 use strict;
-use warnings;
 use diagnostics;
 use CGI::Carp();
 use CGI qw(-compile :all);
@@ -21,11 +27,12 @@ my ( %alias_doc_roots,  # for any aliased DOCUMENT_ROOT's
      @urlparts,         # parts of $ENV{REQUEST_URI} 
      $dir_of_file,      # used in split() to link to parent directory
      $name_of_file,     # only the filename - not used except in split()
-     $debug);           # 1 for debug, 0 for not
+     $debug);           # 1 for debug, 0 for not - debug prints to the browser
 
 
 $debug = 0;
 
+print header;
 
 
 # ############################################################################
@@ -33,11 +40,11 @@ $debug = 0;
 # Configure the directory aliasing here.
 # The alias (left side) references the real path ($alias => $path)
 #
-# All requests for files come from .../cgi-bin/index2file.cgi, so we set
+# All requests for files come from .../cgi-bin/showfile.cgi, so we set
 # /cgi-bin (or whatever your "cgi-bin" directory is) to refer to the
 # actual path to the DOCUMENT_ROOT.
 #
-# For example, if: you have index2file.cgi /var/www/cgi-bin,
+# For example, if: you have showfile.cgi /var/www/cgi-bin,
 # and your files are in /nfs/www/files, then you would configure this as follows:
 #
 #   %alias_doc_roots = (
@@ -48,7 +55,7 @@ $debug = 0;
 
 
 %alias_doc_roots = (
-  'pub'          => '/data/software/webdocs/etpenguin/pub',
+  'pub'          => '/data/webdocs/etpenguin/pub',
   'local_icons'  => '/var/www/local_icons',
   'index_icons'  => '/var/www/index_icons',
   'icons'        => '/var/www/icons'
@@ -62,15 +69,16 @@ $debug && print "REQUEST_URI:  " . $ENV{REQUEST_URI} . "<br>";
 
 
 #
-# There should be one CGI argument in the REQUEST_URI.
-# Parse out the root of the argument to see if it matches in %alias_doc_roots
+# There should be one CGI ARG in the REQUEST_URI.
+# Parse out the root of the ARG to see if it matches in %alias_doc_roots
 # ---------------------------------------------------------------------------------
 #
 # Split the REQUEST_URI into PATH and ARG
 @urlparts = split( '\?', $ENV{REQUEST_URI} );
 
 
-# Redirect requests for http://www.etpenguin.com/cgi-bin/index2file.cgi
+# Redirect requests witout an ARG
+# Meaning, just: http://www.etpenguin.com/cgi-bin/showfile.cgi
 if ( @urlparts == 1 ) {
   print redirect('http://www.etpenguin.com');
   exit;
@@ -79,13 +87,13 @@ if ( @urlparts == 1 ) {
 
 
 #
-# Find the root of the ARG
-# -------------------------------------
+# Find the root part of the ARG
+# ------------------------------------------
 #
 if ( $urlparts[1] =~ m|/(.+?)/(.*)| ) {
   $uri_root = $1;
 }
-$debug && print "Root of the REQUEST_URI:  " . $uri_root . "<br>";
+$debug && print "Directory (root) of the REQUEST_URI:  " . $uri_root . "<br>";
 
 
 
@@ -111,7 +119,7 @@ if ( $alias_doc_roots{$uri_root} ) {
   $ENV{REQUEST_URI} =~ s/%20/ /g;
   $ENV{REQUEST_URI} =~ s/%27/'/g;
 
-  $debug && print "Appending REQUEST_URI argument to root path...<br>";
+  $debug && print "Appending REQUEST_URI ARG to root path...<br>";
   $filename = $real_dir . $urlparts[1];
   $debug && print "Fully pathed filename is:  $filename<br>";
 
@@ -138,16 +146,18 @@ $debug && print "Path to file is:  $dir_of_file<br>";
 
 
 #
-# Start display of the HTML page
+# Start display of the page
 #
-# In this case, we've setup a static filename "cgi.header" which
-# contains the beginning HTML.
+# To print plain text files (the orignal work), we print in this order:
+#   1. cgi.header
+#   2. The text file.
+#   3. cgi.footer
 #
-# ------------------------------------------------------------------
-
-
-print header;
-
+# For other files (PDF, docx, etc.), the goal is to display them we want to provide
+# a direct link to the file so that it can be opened or saved.  To do that,
+# there is a check for the file type (by trusting the file extension).
+#
+# ---------------------------------------------------------------------------
 
 
 if (open (FILE, "$ENV{DOCUMENT_ROOT}/cgi.header" )) {
@@ -171,7 +181,7 @@ print "<table>";
 # Using the Windows XP icons.
 # Better would be to detect the OS and use the appropriate set.
 #
-print "<tr><td><a href='$dir_of_file' class=headingL><img src=/index_icons/winxp/back.png border=0>&nbsp;Parent Directory</a><br><br></td></tr>  <!--/htdig_noindex-->";
+print "<tr><td><a href='$dir_of_file' class=headingL><img src=/index_icons/winxp/back.png border=0>&nbsp;Parent Directory</a><br><br></td></tr>";
 
 
 
@@ -179,18 +189,40 @@ print "<tr><td><a href='$dir_of_file' class=headingL><img src=/index_icons/winxp
 # Print the file
 #
 
-## Debug
-#if ( -T $filename ) {
-#print "<tr><td><font face=\"courier new\" size=\"-2\">";
-#print "Deebug";
-#my $dirname = dirname( $filename );
-#$dirname =~ s|/data/software/webdocs/etpenguin||;
-#print $dirname;
-#print "</font></tr></td>";
+if ( ( $filename =~ m/\.gif$/i ) ||
+     ( $filename =~ m/\.jpg$/i ) ||
+     ( $filename =~ m/\.pdf$/i ) ||
+     ( $filename =~ m/\.png$/i ) ) {
+
+  # Handle non-text files first:
+  #
+  #
+  my $dirname = dirname( $filename );
+  $dirname =~ s|/data/webdocs/etpenguin||;
+
+  print "<tr><td class=content>";
+  print "<font>";
+  print "<br>";
+  print "Sorry, this code does not display that file inline.";
+  print "<br><br>";
+  print "&nbsp;&nbsp;&nbsp;&nbsp;<font color=black>$urlparts[1]</font>";
+  print "<br><br>";
+  print "If you want to try and download the file, please use this link:";
+  print "<br><br>";
+  print "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://www.etpenguin.com$urlparts[1]\">$urlparts[1]</a>";
+  print "<br><br>";
+  print "In case the file has been moved or renamed, here is a link to the parent directory of the path that was provided:";
+  print "<br><br>";
+  print "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://www.etpenguin.com${dirname}\">${dirname}</a>";
+  print "<br><br>";
+  print "</font>";
+  print "</td></tr>";
 
 
-# -T suggests that the file is an ASCII text file
-if ( -T $filename ) {
+} else {
+
+  # Display text files inline:
+  #
   if (open (FILE, "$filename" )) {
     print "<tr><td><font face=\"courier new\"><pre>";
     while (<FILE>) {
@@ -206,39 +238,6 @@ if ( -T $filename ) {
     print "404 - Not found.  Config error I suspect...<br>";
     print "$filename";
   }
-
-# This block of code not reached due to coding in index.cgi.
-# Currently displaying in entire window.
-#
-} elsif ( ( $filename =~ m/\.gif$/i ) ||
-          ( $filename =~ m/\.jpg$/i ) ||
-          ( $filename =~ m/\.png$/i ) ) {
-
-  print "<tr><td><img src=$filename></td></tr>";
-
-} else {
-
-  my $dirname = dirname( $filename );
-  $dirname =~ s|/data/software/webdocs/etpenguin||;
-
-  print "<tr><td class=content>";
-  print "<font>";
-  print "<br>";
-  print "Sorry, we could not display the file.";
-  print "<br><br>";
-  print "&nbsp;&nbsp;&nbsp;&nbsp;<font color=black>$urlparts[1]</font>";
-  print "<br><br><br><br>";
-  print "Perhaps that file has been moved or renamed?";
-  print "<br><br>";
-  print "Here is a link to the parent directory of the path that was provided:";
-  print "<br><br>";
-  print "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://www.etpenguin.com${dirname}\">${dirname}</a>";
-# print "Status:&nbsp;&nbsp;&nbsp;<font color=red>40x&nbsp;-&nbsp;Forbidden</font>";
-# print "<br><br>";
-# print "&nbsp;&nbsp;&nbsp;&nbsp;Note that HTTP status codes are defined in <a href=\"http://www.ietf.org/rfc/rfc2616.txt\">RFC 2626</a>";
-  print "<br><br>";
-  print "</font>";
-  print "</td></tr>";
 
 }
  
@@ -271,3 +270,9 @@ if (open (FILE, "$ENV{DOCUMENT_ROOT}/cgi.footer" )) {
 # 
 # END
 # ------------------------------------------------------------------
+#
+# Brett Lee
+#
+
+
+

@@ -1,0 +1,51 @@
+#
+# INSTALL
+#
+# This file is part of CGIndex.
+# https://github.com/userbrett/cgindex
+#
+# ###########################################################################
+
+To install and configure:
+
+1) Copy the CGI scripts (index.cgi && showfile.cgi) to your
+   ScriptAlias directory.
+
+2) Update Apache's DirectoryIndex parameter, by appending
+   /cgi-bin/index.cgi to that parameter.
+
+3) Download the "index_icons" from http://autoindex.sourceforge.net/
+   and map them in httpd.conf to /index_icons:
+
+     Alias /index_icons "/var/www/index_icons"
+     <Directory "/var/www/index_icons">
+         Options Indexes MultiViews
+     </Directory>
+
+4) Configure any alias Document Roots in the hash %alias_doc_roots, in both
+   index.cgi and showfile.cgi.
+
+   The document roots parameter maps directory trees that are not mounted
+   in the actual path of the webserver.  Say, for example, you have the
+   DocumentRoot to be /var/www/html/domain.com, and have some NFS shares
+   that are elsewhere - like:
+
+     /mnt/pub
+     /mnt/docs
+
+   While the files systems under /mnt may be mapped into Apache using
+   something like:
+
+      Alias /pub  /mnt/pub
+      Alias /docs /mnt/docs
+
+   For CGIndex to work, you would make the same mapping in %alias_doc_roots
+   in both index.cgi and showfile.cgi.
+
+5) Modify the HTML print statements to suit your needs.
+
+6) Optional (but recommended): Create a cgi.header and cgi.footer to be
+   displayed above and below the output from index.cgi.  Both should be
+   placed in DOCUMENT_ROOT.  Examples may be found in the html directory.
+   Also, create a main.html for the body of the initial page.
+

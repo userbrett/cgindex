@@ -1,0 +1,3 @@
+<!--#include file="cgi.header" -->
+<!--#include file="main.html" -->
+<!--#include file="cgi.footer" -->

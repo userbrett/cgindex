@@ -1,0 +1,278 @@
+                </td>
+              </tr>
+            </table>
+          </td>
+
+          <td valign=top align=left width="150">
+            <table bgcolor="#e8e8e8">
+              <tr>
+                <td align=left width=150>
+
+                  <table width="150">
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                         <div class="headingL">Other Sites</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                         <div class="headingL">RFC's</div>
+                          <li><a class="teal" href="http://www.faqs.org/rfcs/">FAQ's</a>
+                          <li><a class="teal" href="http://www.ietf.org/rfc.html">IETF</a>
+                          <li><a class="teal" href="http://www.networksorcery.com/enp/default0904.htm">RFC Sourcebook</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                        <a class="headingL" href="http://www.tldp.org/">Linux</a><br>
+                          <li><a nowrap class="teal" href="http://www.tldp.org/LDP/intro-linux/html/index.html">Linux - Intro</a>
+                          <li><a nowrap class="teal" href="http://www.mjmwired.net/kernel/Documentation/">Linux Kernel</a>
+                          <li><a nowrap class="teal" href="http://www.kernel.org/pub/linux/docs/lkml/">Linux Kernel (LKML)</a>
+                          <li><a class="teal" href="http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html">Bash - Intro</a>
+                          <li><a class="teal" href="http://www.tldp.org/LDP/abs/html/index.html">Bash - Advanced</a>
+                          <li><a class="teal" href="http://www.tldp.org/LDP/GNU-Linux-Tools-Summary/html/index.html">Command Line</a>
+                          <li><a class="teal" href="http://www.tldp.org/LDP/sag/html/index.html">System Administration</a>
+                          <li><a class="teal" href="http://www.tldp.org/LDP/nag2/html/index.html">Network Administration</a>
+                          <li><a class="teal" href="http://www.linuxmanpages.com">Man Pages (& more)</a>
+                          <li><a class="teal" href="http://www.tldp.org/guides.html">More Guides</a>
+                          <li><a class="teal" href="http://www.redhat.com/docs/manuals/linux/">Red Hat Manuals</a>
+                          <li><a class="teal" href="http://www.tldp.org/HOWTO/HOWTO-INDEX/categories.html">HOWTO's</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                        <div class="headingL">Reference/Tutorials</div>
+                          <li><a class="teal" href="http://www.cppreference.com">C++ @ cppreference</a>
+                          <li><a class="teal" href="http://www.cplusplus.com/reference">C++ @ cplusplus</a>
+                          <li><a class="teal" href="http://www.echoecho.com/csstext.htm">CSS @ echoecho</a>
+                          <li><a class="teal" href="http://www.zytrax.com/books/dns">DNS @ Zytrax</a>
+                          <li><a class="teal" href="http://www.w3schools.com/html">HTML @ W3 Schools</a>
+                          <li><a class="teal" href="http://java.sun.com/docs/books/tutorial">Java @ Sun</a>
+                          <li><a class="teal" href="http://www.zytrax.com/books/ldap">LDAP @ Zytrax</a>
+                          <li><a class="teal" href="http://www.yolinux.com/TUTORIALS/">Linux @ YoLinux</a>
+                          <li><a class="teal" href="http://dev.mysql.com/doc">MySQL</a>
+                          <li><a class="teal" href="http://www.netfilter.org/">NetFilter</a>
+                          <li><a class="teal" href="http://www.networksorcery.com/">Network Protocols</a>
+                          <li><a class="teal" href="http://www.openldap.org/">OpenLDAP</a>
+                          <li><a class="teal" href="http://www.quagga.org/">Quagga</a>
+                          <li><a class="teal" href="http://www.samba.org/samba/docs/">Samba</a>
+                          <li><a class="teal" href="http://www.grymoire.com/Unix/">Unix Programming</a>
+                        <br>
+                      </td>
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+            </table>
+
+            <table>
+              <tr>
+                <td align=left width=150>
+                  <br><br>
+                </td>
+              </tr>
+            </table>
+<!--
+            <table bgcolor="#e8e8e8">
+              <tr>
+                <td align=left class=headingL>
+                  Sponsors:
+                </td>
+              </tr>
+            </table>
+  -->
+          </td>
+        </tr>
+
+        <tr>
+          <td bgcolor="#008080" colspan=3>
+            <table border=0 cellspacing=0 cellpadding=0 width="35%" align=center>
+              <tr>
+                <td>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan=3>
+            <br>
+          </td>
+        </tr>
+
+        <tr>
+          <td class=content align=center colspan=3>
+            <table width="80%">
+              <tr>
+                <td class=content align=left>
+
+This site contains many of my notes from research into different aspects of
+the Linux kernel as well as some of the software provided by GNU and others.
+Thouugh these notes are not fully comprehensive or even completetly accurate,
+they are part of my on-going attempt to better understand this complex field.
+And, they are your to use.
+<br><br>
+Should you wish to report any errors or suggestions, please let me know.
+<br><br>
+Should you wish to make a donation for anything you may have learned here,
+please direct that donation to the
+<a target=_new class=teal href="http://www.aspca.org/">ASPCA</a>,
+with my sincere thanks.
+<br>
+<br>Brett Lee
+<br>Everything Penguin
+<br>
+<br>The code for this site, which is just a few CGI scripts, may be found on GitHub
+(<a target=_new class=teal href="https://github.com/userbrett/cgindex"
+>https://github.com/userbrett/cgindex</a>).
+<br>
+<br>For both data encryption and password protection, try Personal Data Security
+(<a target=_new class=teal href="https://www.trustpds.com">https://www.trustpds.com</a>).
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td class=content align=center colspan=3>
+            <table width="80%">
+              <tr>
+                <td class=content align=left>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr><td colspan=3><br></td></tr>
+
+        <tr align=center>
+          <td colspan=3>
+            <table width="85%">
+              <tr>
+                <td bgcolor="#008080">
+                  <table border=0 cellspacing=0 cellpadding=0 width="35%">
+                    <tr>
+                      <td>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr><td colspan=3><br></td></tr>
+
+        <tr align=center>
+          <td align=center colspan=3>
+            <table align=center width="70%">
+              <tr>
+                <td align=center>
+                  <font color=teal face="arial">
+           <i>"We left all that stuff out. If there's an error, we have this
+               routine called 'panic', and when its called, the machine crashes,
+               and you holler down the hall, 'Hey, reboot it.'"</i>
+               <br><br>&nbsp; &nbsp; -&nbsp;Dennis&nbsp;Ritchie&nbsp;on&nbsp;Unix&nbsp;(vs&nbsp;Multics)
+                  </font>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr><td colspan=3><br></td></tr>
+
+        <tr align=center>
+          <td colspan=3>
+            <table width="85%">
+              <tr>
+                <td bgcolor="#008080" colspan=2>
+                  <table border=0 cellspacing=0 cellpadding=0 width="35%">
+                    <tr>
+                      <td>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr><td colspan=3><br></td></tr>
+
+        <tr align=center>
+          <td align=center colspan=3>
+            <FORM method=GET action="http://www.google.com/search">
+              <TABLE bgcolor="#FFFFFF"><tr><td nowrap>
+              <A href="http://www.google.com/" target=_blank>
+              <IMG SRC="http://www.google.com/logos/Logo_40wht.gif" border="0"
+                   ALT="Google" align="absmiddle"></a>
+              <INPUT TYPE=text name=q size=25 maxlength=255 value="">
+              <INPUT type=submit name=btnG VALUE="Google Search">
+              </td></tr></TABLE>
+            </FORM>
+          </td>
+        </tr>
+        <tr align=center>
+          <td align=center colspan=3>
+            <a href="http://www.redhat.com/">
+                <img src="/local_icons/LAMP/redhat_pb.gif" border="0"
+                   alt="[ Powered by Red Hat Linux ]"></a>
+            <a href="http://www.apache.org/">
+                <IMG SRC="/local_icons/LAMP/apache_pb.gif" border="0"
+                   alt="[ Powered by Apache Server]"></a>
+            <a href="http://www.mysql.com/">
+                <img src="/local_icons/LAMP/mysql_pb.gif" border="0"
+                   alt="[ Powered by MySQL ]"></a>
+          </td>
+        </tr>
+
+        <tr><td colspan=3><br></td></tr>
+
+        <tr align=center>
+          <td align=center colspan=3>
+            <table width="25%">
+              <tr>
+                <td bgcolor="#008080" colspan=2>
+                  <table border=0 cellspacing=0 cellpadding=0 width="35%">
+                    <tr>
+                      <td>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr align=center>
+          <td colspan=3>
+            <a href="http://www.etpenguin.com/awstats/awstats.pl?config=www.etpenguin.com">
+              <img src="/local_icons/LAMP/awstats_logo.png" border="0"
+                   alt="[ Statistics by AWStats ]" align="center"></a>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+</BODY>
+</HTML>
+
+

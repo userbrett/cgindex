@@ -1,0 +1,222 @@
+<html>
+<head>
+
+<title>etPenguin - Everything Penguin</title>
+
+<meta content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<meta name=keywords content="Linux, Bash, IPv6">
+<meta name=author content="Brett Lee">
+<meta name="description" content="etPenguin.com: Focusing on Linux-based Operating Systems.">
+<meta name="Googlebot" content="noarchive">
+<meta name="google-site-verification" content="" />
+
+
+<style type="text/css">
+
+a:link.teal, a:visited.teal, a:active.teal,
+a:link.tealnl, a:visited.tealnl, a:active.tealnl {
+font-family : arial, helvetica;
+font-weight : bold;
+color       : #008080;
+text-decoration : none;
+}
+
+a:hover.teal {
+font-family : arial, helvetica;
+font-weight : bold;
+color       : #008080;
+text-decoration : underline;
+}
+
+a:hover.tealnl {
+font-family : arial, helvetica;
+font-weight : bold;
+color       : #008080;
+text-decoration : none;
+}
+
+.title, .subtitle, .headingR, .headingL, .content, .fineprint {
+font-family : arial, helvetica;
+font-weight : bold;
+color       : #008080;
+text-decoration : none;
+}
+
+.title     {  font-size   : 28pt; }
+.subtitle  {  font-size   : 14pt; }
+.headingR  {  font-size   : 12pt; }
+.headingL  {  font-size   : 10pt; }
+.content   {  font-size   :  8pt; }
+.fineprint {  font-size   :  6pt; }
+</style>
+
+</head>
+
+<body bgcolor="white" text="black" link="cadetblue" vlink="cadetblue">
+
+<table align=center width="100%" cellpadding=0 cellspacing=0>
+  <tr align=center>
+    <td>
+      <table align=center width="100%">
+
+        <tr align=left>
+          <td colspan=3>
+            <table width="100%">
+              <tr valign=bottom>
+                <td align=left class=title>
+                  <a class="tealnl" href="/">Everything Penguin</a>
+                  <div class="subtitle">
+                    <a class="tealnl" href="/">etPenguin.com</a>
+                  </div>
+                  <div class="content">
+                    <br>
+                    Focusing on Linux-based Operating Systems<br>
+                  </div>
+                </td>
+
+                <td>
+                  <form method="post" action="https://www.etpenguin.com/cgi-bin/htsearch ">
+                    <input type="hidden" name="config" value="etpenguin">
+                    <input type="hidden" name="method" value="and">
+                    <input type="hidden" name="search_results_header" value="search/header">
+                    <input type="hidden" name="search_results_footer" value="search/footer">
+                    <input type="hidden" name="nothing_found_file" value="search/nomatch">
+                    <input type="hidden" name="syntax_error_file" value="search/syntax">
+                    <input type="hidden" name="restrict" value="www.etpenguin.com">
+                    <input type="hidden" name="exclude" value="">
+                    <table valign=bottom>
+                      <tr>
+                        <td><div class="content">htDig Search:</div>
+                          <input type="text" size="30" name="words" value="">
+                          <input type="submit" value="Search">
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                </td>
+
+                <td align=right>
+                  <a href="http://www.etpenguin.com"><img src="/local_icons/etpenguin.png" border="0"></a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td bgcolor="#008080" colspan=3>
+            <table border=0 cellspacing=0 cellpadding=0 width="100%">
+              <tr>
+                <td>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td valign=top align=left width="150">
+            <table bgcolor="#e8e8e8">
+              <tr>
+                <td align=left width=150>
+
+
+                  <table width="150">
+                    <tr>
+                      <td class="content" nowrap><br>
+                        <a class="headingL" href="/pub/OS">Operating Systems</a><br>
+                          <li><a class="teal" href="/pub/OS/Linux">/pub/OS/Linux</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                        <div class="headingL" href="/pub/Storage">Storage</div>
+                          <li><a class="teal" href="/pub/Storage/FileSystems">File Systems</a>
+                          <li><a class="teal" href="/pub/Storage/FileSystems/HPC">HPC</a>
+                          <li><a class="teal" href="/pub/Storage">/pub/Storage</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap><br>
+                        <a class="headingL" href="/index.shtml#Networking">Networking</a><br>
+                          <li><a class="teal" href="/pub/Networking">/pub/Networking</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap><br>
+                        <a class="headingL" href="/index.shtml#Services">Network Services</a><br>
+                          <li><a class="teal" href="/pub/NetworkServices">/pub/NetworkServices</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                        <div class="headingL">Security</div>
+                          <li><a class="teal" href="/pub/Security">/pub/Security</a>
+                          <li><a class="teal" href="/pub/Encryption">Keytool/OpenSSL</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                        <div class="headingL">Clustering</div>
+                          <li><a class="teal" href="/pub/Clustering/HA">HA</a>
+                          <li><a class="teal" href="/pub/Clustering/DRM">DRM</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                        <a class="headingL" href="/pub/Development">Development</a><br>
+                          <li><a class="teal" href="/pub/Development/Design">Design</a>
+                          <li><a class="teal" href="/pub/Development/Language/C-C++">C/C++</a>
+                          <li><a class="teal" href="/pub/Development/Language/Java">Java</a>
+                          <li><a class="teal" href="/pub/Development/Language/Perl">Perl</a>
+                          <li><a class="teal" href="/pub/Development/Language/Python">Python</a>
+                          <li><a class="teal" href="/pub/Development/Language/Shell">Shell</a>
+                          <li><a class="teal" href="/pub/Web">Web / J2EE</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                        <a class="headingL" href="/pub/OS">Not Linux ?</a><br>
+                          <li><a class="teal" href="/pub/OS/BSD">BSD</a>
+                          <li><a class="teal" href="/pub/OS/HPUX">HP-UX</a>
+                          <li><a class="teal" href="/pub/OS/Mac">Mac</a>
+                          <li><a class="teal" href="/pub/OS/Solaris">Solaris</a>
+                          <li><a class="teal" href="/pub/VM">VM</a>
+                          <li><a class="teal" href="/pub/OS/Windows">Windows</a>
+                          <li><a class="teal" href="/pub/OS">/pub/OS</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content" nowrap>
+                        <br>
+                        <div class="headingL">Other</div>
+                        <li><a class="teal" href="/pub">/pub</a>
+                        <li><a class="teal" href="/pub/3rdParty">/pub/3rdParty</a>
+                        <br>
+                      </td>
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+            </table>
+
+          </td>
+
+          <td valign=top align=left width="100%">
+            <table width="100%" align=left>
+              <tr>
+                <td align=left class=headingL>

@@ -1,5 +1,12 @@
-cgindex - Override Apache's DirectoryIndex with your own custom index.
-Copyright (C) 2009 Brett Lee <brett@brettlee.com>
+#
+# LICENSE - CGindex
+#
+# This file is part of CGIndex.
+# https://github.com/userbrett/cgindex
+#
+# ###########################################################################
+
+Copyright (C) 2009 Brett Lee <brettlee.ca@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
